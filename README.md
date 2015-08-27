@@ -1,7 +1,7 @@
 # cordova-plugin-device-sensor-fusion
 
 A cordova plugin using sensor fusion to offer more precise orientation data.
-It is based on a work of Alexander Pacha.
+It is based on a work of Alexander Pacha (https://bitbucket.org/apacha/sensor-fusion-demo).
 
 Access is via a global `navigator.fusion` object.
 
