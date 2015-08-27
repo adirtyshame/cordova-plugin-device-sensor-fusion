@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='utf-8'?>
+  <plugin id="cordova-plugin-device-sensor-fusion" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>SensorFusion</name>
+    <description>Use Sensor-Fusion for more stable sensor data on Android. Based on a Alexander Pachas Master Thesis "Sensor fusion for robust outdoor Augmented Reality tracking on mobile devices".</description>
+    <author>Thomas Ames</author>
+    
+    <engines>
+        <engine name="cordova-android" version=">=3.6.0" />
+    </engines>
+
+    <js-module src="www/FusionResult.js" name="FusionResult">
+      <clobbers target="FusionResult" />
+    </js-module>
+
+    <js-module src="www/fusion.js" name="fusion">
+      <clobbers target="navigator.fusion" />
+    </js-module>
+
+    <platform name="android">
+      <config-file parent="/*" target="res/xml/config.xml">
+        <feature name="SensorFusion">
+          <param name="android-package" value="org.hitlabnz.sensor_fusion_demo.SensorFusionPlugin" />
+<!--          <param name="onload" value="true" />-->
+        </feature>
+      </config-file>
+      <config-file parent="/*" target="AndroidManifest.xml"></config-file>
+      <source-file src="src/android/SensorFusionPlugin.java" target-dir="src/org/hitlabnz/sensor_fusion_demo" />
+      <source-file src="src/android/representation/EulerAngles.java" target-dir="src/org/hitlabnz/sensor_fusion_demo/representation" />
+      <source-file src="src/android/representation/Matrixf4x4.java" target-dir="src/org/hitlabnz/sensor_fusion_demo/representation" />
+      <source-file src="src/android/representation/Matrix.java" target-dir="src/org/hitlabnz/sensor_fusion_demo/representation" />
+      <source-file src="src/android/representation/Quaternion.java" target-dir="src/org/hitlabnz/sensor_fusion_demo/representation" />
+      <source-file src="src/android/representation/Renderable.java" target-dir="src/org/hitlabnz/sensor_fusion_demo/representation" />
+      <source-file src="src/android/representation/Vector3f.java" target-dir="src/org/hitlabnz/sensor_fusion_demo/representation" />
+      <source-file src="src/android/representation/Vector4f.java" target-dir="src/org/hitlabnz/sensor_fusion_demo/representation" />
+      <source-file src="src/android/orientationProvider/AccelerometerCompassProvider.java" target-dir="src/org/hitlabnz/sensor_fusion_demo/orientationProvider" />
+      <source-file src="src/android/orientationProvider/CalibratedGyroscopeProvider.java" target-dir="src/org/hitlabnz/sensor_fusion_demo/orientationProvider" />
+      <source-file src="src/android/orientationProvider/GravityCompassProvider.java" target-dir="src/org/hitlabnz/sensor_fusion_demo/orientationProvider" />
+      <source-file src="src/android/orientationProvider/ImprovedOrientationSensor1Provider.java" target-dir="src/org/hitlabnz/sensor_fusion_demo/orientationProvider" />
+      <source-file src="src/android/orientationProvider/ImprovedOrientationSensor2Provider.java" target-dir="src/org/hitlabnz/sensor_fusion_demo/orientationProvider" />
+      <source-file src="src/android/orientationProvider/OrientationProvider.java" target-dir="src/org/hitlabnz/sensor_fusion_demo/orientationProvider" />
+      <source-file src="src/android/orientationProvider/RotationVectorProvider.java" target-dir="src/org/hitlabnz/sensor_fusion_demo/orientationProvider" />
+    </platform>
+  </plugin>
