@@ -3,6 +3,9 @@
 A cordova plugin using sensor fusion to offer more precise orientation data.
 It is based on a work of Alexander Pacha (https://bitbucket.org/apacha/sensor-fusion-demo).
 
+DEMO:
+https://github.com/adirtyshame/threecordova
+
 Access is via a global `navigator.fusion` object.
 
 Although the object is attached to the global scoped `navigator`, it is not available until after the `deviceready` event.
