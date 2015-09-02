@@ -1,0 +1,32 @@
+{
+  "name": "cordova-plugin-device-sensor-fusion",
+  "version": "0.0.1",
+  "description": "Use Sensor-Fusion for more stable sensor data on Android. Based on a Alexander Pachas Master Thesis \"Sensor fusion for robust outdoor Augmented Reality tracking on mobile devices\".",
+  "cordova": {
+    "id": "cordova-plugin-device-sensor-fusion",
+    "platforms": [
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adirtyshame/cordova-plugin-device-sensor-fusion.git"
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android",
+    "fusion"
+  ],
+  "engines": [
+    {
+      "name": "cordova-android",
+      "version": ">=3.6.0"
+    }
+  ],
+  "author": "Thomas Ames",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adirtyshame/cordova-plugin-device-sensor-fusion/issues"
+  },
+  "homepage": "https://github.com/adirtyshame/cordova-plugin-device-sensor-fusion#readme"
+}
