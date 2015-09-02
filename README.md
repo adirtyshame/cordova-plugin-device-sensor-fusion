@@ -67,60 +67,49 @@ ID can be used with `navigator.fusion.clearWatch` to stop watching the navigator
 
 #### Example
 
-    function onSuccess(heading) {
-        var element = document.getElementById('heading');
-        element.innerHTML = 'Heading: ' + heading.magneticHeading;
+    function onSuccess(result) {
+        var element = document.getElementById('result');
+        element.innerHTML = 'Result.x: ' + result.x;
     };
 
-    function onError(compassError) {
-        alert('Compass error: ' + compassError.code);
+    function onError(fusionError) {
+        alert('Fusion error: ' + fusionError.code);
     };
 
     var options = {
         frequency: 3000
     }; // Update every 3 seconds
 
-    var watchID = navigator.compass.watchHeading(onSuccess, onError, options);
+    var watchID = navigator.fusion.watchSensorFusion(onSuccess, onError, options);
     
-## navigator.compass.clearWatch
+## navigator.fusion.clearWatch
 
-Stop watching the compass referenced by the watch ID parameter.
+Stop watching the sensor fusion referenced by the watch ID parameter.
 
-    navigator.compass.clearWatch(watchID);
+    navigator.fusion.clearWatch(watchID);
 
-- __watchID__: The ID returned by `navigator.compass.watchHeading`.
+- __watchID__: The ID returned by `navigator.fusion.watchSensorFusion`.
 
 ### Example
 
-    var watchID = navigator.compass.watchHeading(onSuccess, onError, options);
+    var watchID = navigator.fusion.watchSensorFusion(onSuccess, onError, options);
 
     // ... later on ...
 
-    navigator.compass.clearWatch(watchID);
+    navigator.fusion.clearWatch(watchID);
 
-## CompassHeading
+## FusionResult
 
-A `CompassHeading` object is returned to the `compassSuccess` callback function.
-
-### Properties
-
-- __magneticHeading__: The heading in degrees from 0-359.99 at a single moment in time. _(Number)_
-
-- __trueHeading__: The heading relative to the geographic North Pole in degrees 0-359.99 at a single moment in time. A negative value indicates that the true heading can't be determined.  _(Number)_
-
-- __headingAccuracy__: The deviation in degrees between the reported heading and the true heading. _(Number)_
-
-- __timestamp__: The time at which this heading was determined.  _(milliseconds)_
-
-## CompassError
-
-A `CompassError` object is returned to the `compassError` callback function when an error occurs.
+A `FusionResult` object is returned to the `fusionSuccess` callback function.
 
 ### Properties
 
-- __code__: One of the predefined error codes listed below.
+- __x__: The x-component of the resulting quaternion. _(Number)_
 
-### Constants
+- __y__: The y-component of the resulting quaternion. _(Number)_
 
-- `CompassError.COMPASS_INTERNAL_ERR`
-- `CompassError.COMPASS_NOT_SUPPORTED`
+- __z__: The z-component of the resulting quaternion. _(Number)_
+
+- __w__: The w-component of the resulting quaternion. _(Number)_
+
+- __timestamp__: The time at which the data was determined.  _(milliseconds)_
