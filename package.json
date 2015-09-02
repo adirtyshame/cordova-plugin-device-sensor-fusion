@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-device-sensor-fusion",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Use Sensor-Fusion for more stable sensor data on Android. Based on a Alexander Pachas Master Thesis \"Sensor fusion for robust outdoor Augmented Reality tracking on mobile devices\".",
   "cordova": {
     "id": "cordova-plugin-device-sensor-fusion",
