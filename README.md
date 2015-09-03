@@ -32,6 +32,31 @@ Install via cordova CLI:
 - navigator.fusion.watchSensorFusion
 - navigator.fusion.clearWatch
 
+### navigator.fusion.setMode
+
+Set the operation-mode for the plugin. Available modes are (from '0' to '5'):
+* Improved Orientation Sensor 1 (Sensor fusion of Android Rotation Vector and Calibrated Gyroscope - less stable but more accurate)
+* Improved Orientation Sensor 2 (Sensor fusion of Android Rotation Vector and Calibrated Gyroscope - more stable but less accurate)
+* Android Rotation Vector (Kalman filter fusion of Accelerometer + Gyroscope + Compass)
+* Calibrated Gyroscope (Separate result of Kalman filter fusion of Accelerometer + Gyroscope + Compass)
+* Gravity + Compass
+* Accelerometer + Compass
+
+    navigator.fusion.setMode(success, err, mode);
+
+#### Example
+
+    function success(result) {
+        alert('new Mode: ' + result);
+    };
+
+    function err(error) {
+        alert('Error: ' + error);
+    };
+    
+    // Set operation mode to 'Android Rotation Vector'
+    navigator.fusion.setMode(onSuccess, onError, 2);
+
 ### navigator.fusion.getCurrentSensorFusion
 
 Get the current sensor fusion. The result is returned via a `FusionResult`
