@@ -1,3 +1,5 @@
+[![npm version](https://badge.fury.io/js/cordova-plugin-device-sensor-fusion.svg)](http://badge.fury.io/js/cordova-plugin-device-sensor-fusion)
+
 # cordova-plugin-device-sensor-fusion
 
 A cordova plugin using sensor fusion to offer more precise orientation data.
