@@ -39,12 +39,12 @@ Set the operation-mode for the plugin.
     navigator.fusion.setMode(success, err, mode);
 
 Available modes are (from '0' to '5'):
-* Improved Orientation Sensor 1 (Sensor fusion of Android Rotation Vector and Calibrated Gyroscope - less stable but more accurate)
-* Improved Orientation Sensor 2 (Sensor fusion of Android Rotation Vector and Calibrated Gyroscope - more stable but less accurate)
-* Android Rotation Vector (Kalman filter fusion of Accelerometer + Gyroscope + Compass)
-* Calibrated Gyroscope (Separate result of Kalman filter fusion of Accelerometer + Gyroscope + Compass)
-* Gravity + Compass
-* Accelerometer + Compass
+* 0: Improved Orientation Sensor 1 (Sensor fusion of Android Rotation Vector and Calibrated Gyroscope - less stable but more accurate)
+* 1: Improved Orientation Sensor 2 (Sensor fusion of Android Rotation Vector and Calibrated Gyroscope - more stable but less accurate)
+* 2: Android Rotation Vector (Kalman filter fusion of Accelerometer + Gyroscope + Compass)
+* 3: Calibrated Gyroscope (Separate result of Kalman filter fusion of Accelerometer + Gyroscope + Compass)
+* 4: Gravity + Compass
+* 5: Accelerometer + Compass
 
 #### Example
 
