@@ -121,6 +121,12 @@ public class SensorFusionPlugin extends CordovaPlugin {
         final Quaternion quat = this.currentOrientationProvider.getQuaternion();
         final EulerAngles euler = this.currentOrientationProvider.getEulerAngles();
         
+        // DEPRECATED
+        result.put("x", quat.getX());
+        result.put("y", quat.getY());
+        result.put("z", quat.getZ());
+        result.put("w", quat.getW());
+        
         quaternion.put("x", quat.getX());
         quaternion.put("y", quat.getY());
         quaternion.put("z", quat.getZ());
