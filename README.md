@@ -134,6 +134,13 @@ A `FusionResult` object is returned to the `fusionSuccess` callback function.
 
 ### Properties
 
+- __FusionResult.__ (ATTENTION: will be deprecated soon)
+
+  * __x__: The x-component of the resulting quaternion. _(Number)_
+  * __y__: The y-component of the resulting quaternion. _(Number)_
+  * __z__: The z-component of the resulting quaternion. _(Number)_
+  * __w__: The w-component of the resulting quaternion. _(Number)_
+
 - __FusionResult.quaternion.__
 
   * __x__: The x-component of the resulting quaternion. _(Number)_
