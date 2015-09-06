@@ -2,6 +2,7 @@ var argscheck = require('cordova/argscheck'),
   exec = require('cordova/exec'),
   utils = require('cordova/utils'),
   FusionResult = require('./FusionResult'),
+  FusionError = require('./FusionError'),
 
   timers = {},
   fusion = {
@@ -37,8 +38,8 @@ var argscheck = require('cordova/argscheck'),
       argscheck.checkArgs('fFO', 'fusion.getCurrentSensorFusion', arguments);
 
       var win = function (result) {
-        var co = new FusionResult(result.x, result.y, result.z, result.w, result.timestamp);
-        successCallback(co);
+        //var co = new FusionResult(result.x, result.y, result.z, result.w, result.timestamp);
+        successCallback(result);
       };
       var fail = errorCallback && function (code) {
         errorCallback(code);
