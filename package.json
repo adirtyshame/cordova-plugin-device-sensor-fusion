@@ -24,7 +24,7 @@
     }
   ],
   "author": "Thomas Ames",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/adirtyshame/cordova-plugin-device-sensor-fusion/issues"
   },
