@@ -135,32 +135,20 @@ A `FusionResult` object is returned to the `fusionSuccess` callback function.
 ### Properties
 
 - __FusionResult.__ (ATTENTION: will be deprecated soon)
-
   * __x__: The x-component of the resulting quaternion. _(Number)_
   * __y__: The y-component of the resulting quaternion. _(Number)_
   * __z__: The z-component of the resulting quaternion. _(Number)_
   * __w__: The w-component of the resulting quaternion. _(Number)_
 
 - __FusionResult.quaternion.__
-
   * __x__: The x-component of the resulting quaternion. _(Number)_
   * __y__: The y-component of the resulting quaternion. _(Number)_
   * __z__: The z-component of the resulting quaternion. _(Number)_
   * __w__: The w-component of the resulting quaternion. _(Number)_
 
 - __FusionResult.eulerAngles.__
-
   * __yaw__: The Euler-Angles yaw component. _(Number)_
   * __pitch__: The Euler-Angles pitch component. _(Number)_
   * __roll__: The Euler-Angles roll component. _(Number)_
 
 - __FusionResult.timestamp__: The time at which the data was determined.  _(milliseconds)_
-
-### Changelog
-
-- __0.0.1__
-  * initial commit
-- __0.0.2__
-  * README.md updated
-- __0.0.3__
-  * FusionResult extended (see 'Properties') !!!ATTENTION: DEPRECATION!!!
