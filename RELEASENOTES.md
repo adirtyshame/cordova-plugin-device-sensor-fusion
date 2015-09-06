@@ -1,9 +1,11 @@
 # Release Notes
 
-- __0.0.1__
+### 0.0.1
   * initial commit
-- __0.0.2__
+
+### 0.0.2
   * README.md updated
-- __0.0.3__ (2015-09-06)
+
+### 0.0.3 (2015-09-06)
   * FusionResult extended (see 'Properties') !!!ATTENTION: DEPRECATION!!!
   
