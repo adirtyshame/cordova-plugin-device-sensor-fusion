@@ -12,6 +12,10 @@
       <clobbers target="FusionResult" />
     </js-module>
 
+    <js-module src="www/FusionError.js" name="FusionError">
+      <clobbers target="FusionError" />
+    </js-module>
+
     <js-module src="www/fusion.js" name="fusion">
       <clobbers target="navigator.fusion" />
     </js-module>
