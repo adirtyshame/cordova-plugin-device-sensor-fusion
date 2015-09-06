@@ -13,6 +13,7 @@ import org.hitlabnz.sensor_fusion_demo.orientationProvider.ImprovedOrientationSe
 import org.hitlabnz.sensor_fusion_demo.orientationProvider.OrientationProvider;
 import org.hitlabnz.sensor_fusion_demo.orientationProvider.RotationVectorProvider;
 import org.hitlabnz.sensor_fusion_demo.representation.Quaternion;
+import org.hitlabnz.sensor_fusion_demo.representation.EulerAngles;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -114,16 +115,27 @@ public class SensorFusionPlugin extends CordovaPlugin {
     }
     
     private JSONObject getSensorFusion() throws JSONException {
-        final JSONObject obj = new JSONObject();
+        final JSONObject result = new JSONObject();
+        final JSONObject quaternion = new JSONObject();
+        final JSONObject eulerAngles = new JSONObject();
         final Quaternion quat = this.currentOrientationProvider.getQuaternion();
+        final EulerAngles euler = this.currentOrientationProvider.getEulerAngles();
         
-        obj.put("x", quat.getX());
-        obj.put("y", quat.getY());
-        obj.put("z", quat.getZ());
-        obj.put("w", quat.getW());
-        obj.put("timestamp", System.currentTimeMillis());
+        quaternion.put("x", quat.getX());
+        quaternion.put("y", quat.getY());
+        quaternion.put("z", quat.getZ());
+        quaternion.put("w", quat.getW());
+        
+        eulerAngles.put("yaw", euler.getYaw());
+        eulerAngles.put("pitch", euler.getPitch());
+        eulerAngles.put("roll", euler.getRoll());
+        
+        result.put("quaternion", quaternion);
+        result.put("eulerAngles", eulerAngles);
+        
+        result.put("timestamp", System.currentTimeMillis());
 
-        return obj;
+        return result;
     }
 
 }
